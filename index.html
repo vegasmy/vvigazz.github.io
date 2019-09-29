@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header_wrapper">
+            <div class="header_logo"><a href="#"><img src="icon/head_logo.png" alt="logo"></a></div>
+            <div class="header_block">
+                <div class="header_block_title">Агентство недвижимости</div>
+                <div class="header_block_subtitle"><img src="icon/metro_logo.svg" alt="metro">
+                Москва, «Беляево», ул. Миклухо-Маклая, д. 43</div>
+            </div>
+            <div class="header_block">
+                <div class="header_block_title"><a href="tel:+74952760303">+7 (495) 276-03-03</a></div>
+                <div class="header_block_subtitle">Пн—Пт: с 09.00 до 21.00, Сб—Вс: с 10.00 до 17.00</div>
+            </div>
+                <button class="header_btn">Бесплатная консультация</button>
+            </div>
+        </div>
+    </header>
+    <section class="navigation">
+        <nav class="navigation_menu">
+            <div class="container">
+                <ul class="menu">
+                    <li class="menu_item"><a class="menu_link" href="#">новостройки</a></li>
+                    <li class="menu_item"><a class="menu_link" href="#">ЭЛИТНАЯ НЕДВИЖИМОСТЬ</a></li>
+                    <li class="menu_item"><a class="menu_link" href="#">вторичная недвижимость</a></li>
+                    <li class="menu_item"><a class="menu_link" href="#">коммерческая недвижимость</a></li>
+                    <li class="menu_item"><a class="menu_link" href="#">ипотека</a></li>
+                    <li class="menu_item"><a class="menu_link" href="#">УСЛУГИ</a></li>
+                    <li class="menu_item"><a class="menu_link" href="#">КОНТАКТЫ</a></li>
+                </ul>
+                <a class="mobile-menu-toggle js-toggle-menu hamburger-menu" href="#">
+                    <span class="menu-item"></span>
+                    <span class="menu-item"></span>
+                    <span class="menu-item"></span>
+                </a>
+                <div class="navigation_rectangle"></div>
+            </div>
+        </nav>
+    </section>
+    <section class="promo">
+        <div class="container">
+            <h1>Купить квартиру в новостройке</h1>
+            <div class="promo_wrapper">
+                <form>
+                    <span>Стоимость, млн руб.</span>
+                    <div class="range_block">
+                    <!-- Ползунок -->
+                    <div id='id66' class="range">
+                    <div id='id66b' class='range__between'></div>
+                        <button id='id661' class="range__button_1"><input id='id66i1' class='range_inpt1' type='text' min='1' max='69'></button>
+                        <button id='id662' class="range__button_2">
+                        <input id='id66i2' class='range_inpt2' type='text' min='1' max='69'>
+                        </button>
+                    </div>
+                    <div class="mobile_range">
+                        <input type="text" placeholder="От 1 до 69" onkeyup="this.value=this.value.replace(/[^\d]/,'')" > 
+                    </div>
+                    <!-- Ползунок -->
+                    <ul class="check">
+                        <li class="check_list"><input type="radio"name="text"> Москва и Новая Москва</li>
+                        <li class="check_list"><input type="radio"name="text"> Московская область</li>
+                    </ul>
+                    </div>
+                    <div class="form_select">
+                    <select name="list">
+                        <option value="">Станция метро</option>
+                        <option value="">Арбатская</option>
+                    </select>
+                    <select name="list">
+                        <option value="">Тип жилья</option>
+                        <option value="">Квартира</option>
+                    </select>
+                    <select name="list">
+                        <option value="">Площадь</option>
+                        <option value="">40м2</option>
+                    </select>
+                    <select name="list">
+                        <option value="">Тип отделки</option>
+                        <option value="">Кирпич</option>
+                    </select>
+                    <select name="list">
+                        <option value="">Срок сдачи</option>
+                        <option value="">Год</option>
+                    </select>
+                    <button class="form_btn">Найти</button>
+                    </div>
+                </form>
+            </div>
+            <div class="promo_phone">
+                <div class="promo_phone_icon">
+                    <img src="icon/phone_icon.svg" alt="phone">
+                    Обратный звонок
+                </div>
+            </div>            
+            <div class="promo_calendar">
+                <div class="promo_calendar_icon">
+                    <img src="icon/calendar.svg" alt="calendar">
+                    Записаться на показ
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="map">
+        <div id="map" style="height: 400px"></div>
+    </section>
+    <section class="market">
+        <div class="container">
+            <div class="market_block">
+                <div class="market_block_info">
+                    <h2>Микрорайон Некрасовка</h2>
+                    <div class="market_block_title"><img src="icon/metro_yellow.svg" alt="metro">Марьина роща <span>2 минуты пешком</span></div>
+                    <div class="market_block_subtitle">Москва, ЮВАО, район Некрасовка, Люберецкие поля аэрации</div>
+                    <div class="rectangle"></div>
+                    <div class="market_block_room">
+                        <span class="title">1-комнатные от 30 м²</span> <span class="price">6 900 000 р.</span>
+                    </div>
+                    <hr>
+                    <div class="market_block_room">
+                        <span class="title">2-комнатные от 75 м²</span> <span class="price">от 22 900 000 р.</span>
+                    </div>
+                    <hr>
+                    <div class="market_block_room">
+                        <span class="title">3-комнатные от 74 м²</span> <span class="price">от 17 400 000 р.</span>
+                    </div>
+                    <hr>
+                    <div class="market_block_room">
+                        <span class="title">4-комнатные от 177 м²</span> <span class="price">от 63 200 000 р.</span>
+                    </div>
+                    <hr>
+                    <div class="market_block_room">
+                        <span class="title">Стадия готовности:</span> <span class="price">Монтаж завершен. Ввод дома в эксплуатацию в 4 квартале 2019 года / На заселении.</span>
+                    </div>
+                    <div class="market_block_room">
+                        <span class="title">Ипотека:</span> <span class="price">Есть</span>
+                    </div>
+                    <div class="market_block_room">
+                        <span class="title">Отделка:</span> <span class="price">Возможна</span>
+                    </div>
+                <div class="market_block_special">
+                    <div class="icon">
+                        <img src="icon/house.svg" alt="house">Ипотека
+                    </div>
+                    <div class="icon">
+                        <img src="icon/note.svg" alt="note">Рассрочка
+                    </div>
+                    <div class="icon">
+                        <img src="icon/procent.svg" alt="procent">Скидки
+                    </div>
+                    <div class="icon">
+                        <img src="icon/rub.svg" alt="rub">субсидии
+                    </div>
+                </div>
+                </div>
+                <div class="market_block_img">
+                    <div class="right_panel">
+                        <div class="gift"><img src="icon/gift.svg" alt="gift"> Подарочные сертификаты</div>
+                        <div class="megafon"><img src="icon/megafon.svg" alt="megafon">Акция</div>  
+                    </div>
+                    <button class="market_btn">Подробнее</button>                     
+                </div>
+            </div>
+            <div class="market_block">
+                <div class="market_block_info">
+                    <h2>ДОМ «Флагман»</h2>
+                    <div class="market_block_title"><img src="icon/metro_gray.svg" alt="metro">Выхино <span>10 минут на транспорте</span></div>
+                    <div class="market_block_subtitle">Московская область, г. Долгопрудный, ул. Набережная</div>
+                    <div class="rectangle_min"></div>
+                    <div class="market_block_room">
+                        <span class="title">1-комнатные от 30 м²</span> <span class="price">от 3 239 397 р.</span>
+                    </div>
+                    <hr>
+                    <div class="market_block_room">
+                        <span class="title">2-комнатные от 75 м²</span> <span class="price">от 4 734 000 р.</span>
+                    </div>
+                    <hr>
+                    <div class="market_block_room">
+                        <span class="title">3-комнатные от 74 м²</span> <span class="price">от 6 512 440 р.</span>
+                    </div>
+                    <hr>
+                    <div class="market_block_room">
+                        <span class="title">Стадия готовности:</span> <span class="price">Введен в эксплуатацию / На заселении.</span>
+                    </div>
+                    <div class="market_block_room">
+                        <span class="title">Ипотека:</span> <span class="price">Есть</span>
+                    </div>
+                    <div class="market_block_room">
+                        <span class="title">Отделка:</span> <span class="price">Возможна</span>
+                    </div>
+                <div class="market_block_special">
+                    <div class="icon">
+                        <img src="icon/house.svg" alt="house">Ипотека
+                    </div>
+                    <div class="icon">
+                        <img src="icon/note.svg" alt="note">Рассрочка
+                    </div>
+                    <div class="icon">
+                        <img src="icon/procent.svg" alt="procent">Скидки
+                    </div>
+                    <div class="icon">
+                        <img src="icon/rub.svg" alt="rub">субсидии
+                    </div>
+                </div>
+                </div>
+                <div class="market_block_img_middle">
+                    <button class="market_btn">Подробнее</button>                     
+                </div>
+            </div>
+            <div class="market_block">
+                <div class="market_block_info">
+                    <h2>ЖК «Лайково»</h2>
+                    <div class="market_block_title"><img src="icon/metro_blue.svg" alt="metro">Ховрино<span>15 минут на транспорте</span></div>
+                    <div class="market_block_subtitle">Московская область, г. Долгопрудный, ул. Дирижабельная</div>
+                    <div class="rectangle"></div>
+                    <div class="market_block_room">
+                        <span class="title">1-комнатные от 30 м²</span> <span class="price">6 900 000 р.</span>
+                    </div>
+                    <hr>
+                    <div class="market_block_room">
+                        <span class="title">2-комнатные от 75 м²</span> <span class="price">от 22 900 000 р.</span>
+                    </div>
+                    <hr>
+                    <div class="market_block_room">
+                        <span class="title">3-комнатные от 74 м²</span> <span class="price">от 17 400 000 р.</span>
+                    </div>
+                    <hr>
+                    <div class="market_block_room">
+                        <span class="title">4-комнатные от 177 м²</span> <span class="price">от 63 200 000 р.</span>
+                    </div>
+                    <hr>
+                    <div class="market_block_room">
+                        <span class="title">Стадия готовности:</span> <span class="price">Монтаж завершен. Ввод дома в эксплуатацию в 4 квартале 2019 года / На заселении.</span>
+                    </div>
+                    <div class="market_block_room">
+                        <span class="title">Ипотека:</span> <span class="price">Есть</span>
+                    </div>
+                    <div class="market_block_room">
+                        <span class="title">Отделка:</span> <span class="price">Возможна</span>
+                    </div>
+                <div class="market_block_special">
+                    <div class="icon">
+                        <img src="icon/house.svg" alt="house">Ипотека
+                    </div>
+                    <div class="icon">
+                        <img src="icon/note.svg" alt="note">Рассрочка
+                    </div>
+                    <div class="icon">
+                        <img src="icon/procent.svg" alt="procent">Скидки
+                    </div>
+                    <div class="icon">
+                        <img src="icon/rub.svg" alt="rub">субсидии
+                    </div>
+                </div>
+                </div>
+                <div class="market_block_img_last">
+                    <div class="right_panel">
+                        <div class="gift"><img src="icon/gift.svg" alt="gift"> Подарочные сертификаты</div>
+                    </div>
+                    <button class="market_btn">Подробнее</button>                     
+                </div>
+            </div>
+            <button class="market_down_btn">Все предложения</button>
+        </div>
+    </section>
+    <section class="ofice">
+        <div class="container">
+            <div class="ofice_block">
+                <h2>Офис Миэль «В Беляево»</h2>
+                <div class="ofice_block_title">— это команда профессиональных экспертов и агентов по недвижимости с большим багажом риелторской и юридической практики. Основные направления Миэль «В Беляево» – это продажа элитной недвижимости и квартир в новостройках.</div>
+                <h2>Наши специалисты выполняют широкий спектр операций, связанных с недвижимостью:</h2>
+                <div class="ofice_block_icon">
+                    <div class="ofice_wrapper"><img src="icon/ofis_1.svg" alt="ofice"></div>
+                        <div class="text">Подбор <br> квартир</div>
+                    <div class="ofice_wrapper"><img src="icon/ofis_2.svg" alt="ofice"></div>
+                        <div class="text">Проверка <br> застройщика <br> и/или собственника</div>
+                    <div class="ofice_wrapper">
+                        <img src="icon/ofis_3.svg" alt="ofice"></div>
+                        <div class="text">Проверка и <br> оформление документов</div>
+                    <div class="ofice_wrapper"><img src="icon/ofis_4.svg" alt="ofice"></div>
+                        <div class="text">Юридическая <br> поддержка</div>
+                    <div class="ofice_wrapper"><img src="icon/ofis_5.svg" alt="ofice"></div>
+                        <div class="text">Сопровождение <br> сделки</div>
+                </div>
+                <div class="ofice_block_subtitle">
+                    Если вы хотите купить квартиру в элитном жилом комплексе, то мы поможем вам это сделать не только максимально комфортно и безопасно, но и выгодно – мы всегда сообщаем о самых интересных акциях и выбираем действительно горячие предложения. Кроме того, мы готовы помочь оформить выгодную ипотеку. Каждый клиент становится для нас партнером, которого мы готовы защитить от всевозможных рисков и поддержать на всех этапах проведения сделки.
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer_wrapper">
+            <div class="copirate">© 2009–2016 Офис «В Беляево». При использовании материалов ссылка на сайт обязательна</div>
+            <div class="evrika"><img src="icon/lamp.svg" alt="lamp">Разработка и продвижение — «ЭВРИКА»</div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/map.js"></script>
+    <script src="js/range.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
